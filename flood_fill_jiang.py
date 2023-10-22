@@ -35,6 +35,11 @@ def flood_fill(input_board: List[str], old: str, new: str, x: int, y: int) -> Li
     Returns:
         List[str]: Modified board
     """
+
+    # ensure the length of each row is same
+    for r in range(1, len(input_board)):
+        assert len(input_board[r]) == len(input_board[0])
+    
     # when input out of the board
     if x < 0 or x >= len(input_board) or y < 0 or y >= len(input_board[0]):
         return input_board
